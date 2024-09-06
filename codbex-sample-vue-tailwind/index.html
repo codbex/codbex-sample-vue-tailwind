@@ -4,13 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vue 3 Form with Tailwind</title>
+        <title>Vue 3 Form with Tailwind (ES6)</title>
         <!-- Import Tailwind CSS from CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Import Vue 3 from CDN -->
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <!-- Link to External JavaScript File -->
-        <script src="app.js" defer></script>
     </head>
 
     <body class="bg-gray-100 p-8">
@@ -87,7 +83,6 @@
                 <pre>{{ formData }}</pre>
             </div>
 
-
             <!-- Table for Remote Data -->
             <div class="mt-10">
                 <h2 class="text-xl font-bold mb-4">Remote Data</h2>
@@ -109,6 +104,10 @@
                 </table>
             </div>
         </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- Import JavaScript file as ES6 module -->
+        <script type="module" src="app.js"></script>
     </body>
 
 </html>

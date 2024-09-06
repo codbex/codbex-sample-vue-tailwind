@@ -1,6 +1,4 @@
-const { createApp } = Vue;
-
-createApp({
+const app = Vue.createApp({
     data() {
         return {
             formData: {
@@ -33,3 +31,6 @@ createApp({
         this.fetchRemoteData();
     }
 }).mount('#app');
+
+
+
