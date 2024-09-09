@@ -1,5 +1,21 @@
 import PersonDetails from './person-details.js';
 
+// Import your translations
+import en from './locales/en.json' with { type: "json" };
+import fr from './locales/fr.json' with { type: "json" };
+
+// Define the messages for each language
+const messages = {
+    en,
+    fr
+};
+
+// Create the i18n instance with options
+const i18n = VueI18n.createI18n({
+    locale: 'en', // Set default language
+    messages,     // Set locale messages
+});
+
 const app = Vue.createApp({
     data() {
         return {
@@ -11,6 +27,7 @@ const app = Vue.createApp({
                 agree: false,
                 option: ''
             },
+            locale: this.$i18n.locale,
             users: [] // For storing remote data
         };
     },
@@ -26,6 +43,9 @@ const app = Vue.createApp({
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
+        },
+        changeLocale() {
+            this.$i18n.locale = this.locale; // Switch language dynamically
         }
     },
     mounted() {
@@ -35,6 +55,7 @@ const app = Vue.createApp({
 });
 app.config.compilerOptions.isCustomElement = (tag) =>
     ["person-details"].includes(tag);
+app.use(i18n);
 app.mount('#app');
 
 
