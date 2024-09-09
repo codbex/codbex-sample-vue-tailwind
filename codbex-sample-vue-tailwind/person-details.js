@@ -5,7 +5,7 @@ export default class PersonDetails extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = `
             <blockquote>
-                <p style="color: blue; font-family: monospace">Person Record Component</p>
+                <p style="color: blue; font-family: monospace">Person Record Component as a Custom Element</p>
             </blockquote>`;
     }
 }

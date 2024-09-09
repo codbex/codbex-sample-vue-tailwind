@@ -1,4 +1,5 @@
 import PersonDetails from './person-details.js';
+import { options, loadModule, version } from './loader.js'
 
 // Import your translations
 import en from './locales/en.json' with { type: "json" };
@@ -17,6 +18,9 @@ const i18n = VueI18n.createI18n({
 });
 
 const app = Vue.createApp({
+    components: {
+        'my-component': Vue.defineAsyncComponent(() => loadModule('./myComponent.vue', options)),
+    },
     data() {
         return {
             formData: {
