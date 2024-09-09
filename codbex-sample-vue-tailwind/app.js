@@ -1,3 +1,5 @@
+import PersonDetails from './person-details.js';
+
 const app = Vue.createApp({
     data() {
         return {
@@ -30,7 +32,10 @@ const app = Vue.createApp({
         // Fetch remote data when the component is mounted
         this.fetchRemoteData();
     }
-}).mount('#app');
+});
+app.config.compilerOptions.isCustomElement = (tag) =>
+    ["person-details"].includes(tag);
+app.mount('#app');
 
 
 
